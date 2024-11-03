@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Checkout') {
+                    steps {
+                        // This checkout clones the whole repository into Jenkins workspace
+                        checkout scm
+                    }
+                }
         stage('GetProject') {
                     steps {
                         dir('ct5171_test1Maven') {  // Move into the correct subdirectory
@@ -27,8 +34,8 @@ pipeline {
                     steps {
                         dir('ct5171_test1Maven') {
                         sh 'mvn exec:java' }
-                    }
-                }
+                        }
+        }
     }
     post {
         success {
