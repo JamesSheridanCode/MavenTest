@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('GetProject') {
             steps {
-                 git branch: 'main2', url: 'https://github.com/JamesSheridanCode/MavenTest.git'
+                 git branch: 'main', url: 'https://github.com/JamesSheridanCode/MavenTest.git'
             }
         }
         stage ('build') {
